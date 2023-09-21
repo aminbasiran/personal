@@ -1,0 +1,77 @@
+
+@mixin displayFlex($direction){
+    display: flex;
+    flex-direction: $direction;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: calc(70% + 0.6vmin);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    height: 150vh;
+}
+
+.header{
+    height: 50px;
+    width: 100%;
+    position:fixed;
+    padding:0 30px;
+    background: #d2d2d2;
+    @include displayFlex(row);
+    justify-content: space-between;
+    align-items: center;
+
+    &__content{
+        @include displayFlex(row);
+    }
+
+    &__item{
+        padding: 0 10px;
+        
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &--active{
+            font-weight: bold;
+        }
+    }
+
+    &__menu{
+        display: none;
+        top: 0.75rem;
+        right: 0.75rem;
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        background: rgb(11, 22, 58);
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .header{
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: start;
+
+        &__menu{
+            display:block;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        
+        &__right{
+            display: none;
+        }
+    }
+}
