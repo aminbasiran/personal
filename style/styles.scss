@@ -58,6 +58,10 @@ body{
 @media only screen and (max-width: 768px){
     .header{
 
+        &.active{
+            height: 100px;
+            width: 100%;
+        }
         flex-direction: column;
         justify-content: space-around;
         align-items: start;
@@ -72,6 +76,12 @@ body{
         
         &__right{
             display: none;
+
+            &.active{
+                display: flex;
+            }
         }
     }
+
+    
 }

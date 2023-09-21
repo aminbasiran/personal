@@ -50,6 +50,10 @@ body {
     justify-content: space-around;
     align-items: start;
   }
+  .header.active {
+    height: 100px;
+    width: 100%;
+  }
   .header__menu {
     display: block;
   }
@@ -58,5 +62,8 @@ body {
   }
   .header__right {
     display: none;
+  }
+  .header__right.active {
+    display: flex;
   }
 }/*# sourceMappingURL=styles.min.css.map */
