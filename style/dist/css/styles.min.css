@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   font-size: calc(70% + 0.6vmin);
@@ -8,6 +9,7 @@
 
 body {
   height: 150vh;
+  background: rgba(255, 255, 255, 0.8156862745);
 }
 
 .header {
@@ -15,11 +17,13 @@ body {
   width: 100%;
   position: fixed;
   padding: 0 30px;
-  background: #d2d2d2;
+  background: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.1px solid #dddcdc;
+  box-shadow: 0.2px 0.2px 2px rgba(0, 0, 0, 0.2);
 }
 .header__content {
   display: flex;
@@ -41,14 +45,88 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background: rgb(11, 22, 58);
+  background: rgb(42, 72, 155);
 }
 
-@media only screen and (max-width: 768px) {
+.main {
+  width: 70vw;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+.main__section {
+  background: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #cccbcb;
+}
+.main .main__title {
+  font-size: 3rem;
+}
+.main .main__image {
+  width: 100%;
+}
+.main .main__description {
+  font-size: 1.2rem;
+}
+.main .main__FAQ, .main .main__questions {
+  font-size: 1.3rem;
+}
+.main__stacks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.main__tech {
+  padding: 20px 20px 0px 20px;
+  border-radius: 6px;
+  background: #f8f8f8;
+}
+.main__tech:hover {
+  cursor: pointer;
+  background: #e7e7e7;
+}
+.main__tech__img {
+  width: 5vw;
+  height: auto;
+}
+.main__projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+.main__projects__item:hover {
+  cursor: pointer;
+  background: rgb(245, 245, 245);
+  border-radius: 2px;
+}
+.main__projects__item img {
+  width: 100%;
+  height: 200px;
+}
+.main__projects__item p, .main__projects__item h1 {
+  padding-left: 10px;
+}
+.main * {
+  padding-bottom: 20px;
+}
+
+.media {
+  height: 100px;
+  position: fixed;
+  top: 30vh;
+  left: 30px;
+}
+.media__items {
+  margin-top: 40px;
+}
+.media__items img {
+  width: 2.2vw;
+  height: auto;
+}
+
+@media only screen and (max-width: 769px) {
   .header {
     flex-direction: column;
     justify-content: space-around;
-    align-items: start;
   }
   .header.active {
     height: 100px;
@@ -62,6 +140,7 @@ body {
   }
   .header__right {
     display: none;
+    margin: 0 auto;
   }
   .header__right.active {
     display: flex;
