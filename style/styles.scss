@@ -1,28 +1,22 @@
-
 @mixin displayFlex($direction){
     display: flex;
     flex-direction: $direction;
 }
 
+$std-font-size: 16px;
 
 html{
-
-    // font-size: 16px;
+    font-size: $std-font-size;
 }
-
 
 *{
     box-sizing: border-box;
-    font-size: 16px;
     margin: 0;
     padding: 0;
-    font-size: calc(70% + 0.6vmin);
     font-family: 'Raleway', sans-serif;
 }
 
 body{
-    // height: 150vh;
-    // background: #ffffffd0;
     overflow-x: hidden;
 }
 
@@ -45,6 +39,7 @@ body{
 
     &__item{
         padding: 0 20px;
+        font-size: 15px;
         
 
         &:hover{
@@ -72,9 +67,13 @@ body{
 }
 
 .main{
-    width: 65vw; //change here necessarily
+    width: 60vw; //change here necessarily
     margin: 0 auto;
-    padding-top: 120px;
+    padding-top: 90px;
+
+    *{
+        padding-bottom: 20px;
+    }
 
     &__section{
         background: #ffffff;
@@ -82,25 +81,35 @@ body{
         border-bottom: 1px solid #cccbcb;
     }
 
-    .main__title{
-        font-size: 3rem;
+    &__brief{
+        padding-bottom: 40px;
     }
 
-    .main__image{
+    &__title{
+        font-size: 2.625rem;
+        font-weight: bolder;
+    }
 
+    &__image{
         width: 100%;
     }
 
-    .main__description{
-        font-size: 1.2rem;
-    }
-    
-    .main__FAQ , .main__questions{
-        font-size: 1.3rem;
+    &__description{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 35px;
     }
 
-    &__description{
-        line-height: 35px;
+    &__posted{
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #7e7e7e;
+    }
+    
+    &__FAQ {
+        font-size: 1.4rem;
+        font-weight: 600;
+        
     }
 
     &__stacks{
@@ -118,7 +127,6 @@ body{
             border-radius: 2px;
             background: rgb(245, 245, 245);
         }
-
     }
 
     &__tech__img{
@@ -129,86 +137,76 @@ body{
     &__projects{
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-        gap: 10px;
+        gap: 10px;  
+    }
 
-        &__item{
+    &__item{
             
-            &:hover{
-                cursor: pointer;
-                background: rgb(245, 245, 245);
-                border-radius: 2px;
-            }
-
-            img{
-                width: 100%;
-                height: 200px;
-            }
-            
-            p,h1{
-                padding-left: 10px;
-            }
+        &:hover{
+            cursor: pointer;
+            background: rgb(245, 245, 245);
+            border-radius: 2px;
         }
 
-
+        img{
+            width: 100%;
+            height: 200px;
+        }
         
+        p,h1{
+            padding-left: 10px;
+        }
+
+        h1{
+            font-size: 26px;
+        }
     }
 
     // ACCORDION 
+    &__label{
+        font-size: 17px;
+        font-weight: bolder;
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
 
+        &::before{
+            content: "+";
+            padding-right: 10px;
+        }
+    }
+
+    &__content{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        display: none;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    
+        &:checked + .main__label + .main__content {
+            padding-left: 28px;
+            max-height: 500px; /* Adjust the maximum height as needed */
+            display: block;
+            transition: max-height 0.3s;
+        }
+    }   
     // ACCORDION
-
-    
-
-    *{
-        padding-bottom: 10px;
-    }
-    
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-  /* Style for the accordion labels */
-.accordion-label {
-    display: block;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-    &::before{
-        content: "+";
-        padding-right: 10px;
-    }
-}
-
-  /* Styling when the label is checked (accordion is open) */
-
-  /* Hide the content by default */
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s;
-    display: none;
-}
-
-  /* Show the content when the label is checked */
-input[type="checkbox"]:checked + .accordion-label + .accordion-content {
-    max-height: 500px; /* Adjust the maximum height as needed */
-    display: block;
-    transition: max-height 0.3s;
 }
 
 .media{
     position: fixed;
-    top: 30vh;
+    top: 200px;
     left: 30px;
     padding: 15px 10px 15px 10px;
 
     &__items{
         
         img{    
-            width: 2.2vw;
+            width: 30px;
             height:auto;
             padding: 15px 0px 15px 0px;
 
@@ -220,35 +218,6 @@ input[type="checkbox"]:checked + .accordion-label + .accordion-content {
     }
 }
 
-.hero{
-    width: 100vw;
-    height: 100vh;
-    background-color: #fafafa;
-    
-
-    &__scroller{
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background-color: rgba(212, 212, 212, 0.76);
-        bottom: 0px;
-        left: 300px;
-    }
-
-    &__greet{
-        position: absolute;
-        // width: 100px;
-        // height: 100px;
-        // background-color: rgba(126, 45, 45, 0.76);
-        right: 0px;
-        bottom: 300px;
-
-        h1{
-            font-size:1.4rem;
-        }
-    }
-}
-
 .footer{
     padding: 20px;
     width: 100%;
@@ -257,15 +226,22 @@ input[type="checkbox"]:checked + .accordion-label + .accordion-content {
     align-items: center;
     color: #ffffff;
 
+    h1{
+        font-size: 0.9rem;
+    }
+
     &__wrapper{
         padding-top: 30px;
         @include displayFlex(row);
 
-        div{
+        a{
             padding: 0px 10px 0px 10px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #ffffff;
         }
 
-        div:nth-child(2){
+        a:nth-child(2){
             border-left: 1px solid white;
             border-right: 1px solid white;
         }
@@ -278,14 +254,20 @@ input[type="checkbox"]:checked + .accordion-label + .accordion-content {
 
 @media only screen and (max-width: 769px){
     .header{
+        flex-direction: column;
+        justify-content: space-around;
 
         &.active{
             height: 100px;
             width: 100%;
         }
-        flex-direction: column;
-        justify-content: space-around;
 
+        &__right{
+            div{
+                font-size: 13px;
+            }
+        }
+        
         &__menu{
             display:block;
 
@@ -308,31 +290,64 @@ input[type="checkbox"]:checked + .accordion-label + .accordion-content {
     }
 
     .main{
-        width:94vw;
+        width:93vw;
 
+
+        &__title{
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        &__description{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 30px;
+        }
+
+        &__item{
+            h1{
+                font-size: 20px;
+            }
+            p{
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        &__FAQ{
+            font-size: 18px;
+        }
+
+        &__label{
+            font-size: 15px;
+        }
+
+        &__content{
+            p{
+                font-size: 14px;
+            }
+        }
     }
 
     .media{
         position: fixed;
-        top: 30vh;
-        left: 10px;
-        padding: 10px 25px 10px 10px;
-        background-color: rgba(240, 240, 240, 0.842);
+        top: 150px;
+        left: 0px;
+        padding: 10px 15px 10px 15px;
+        background-color: rgba(216, 216, 216, 0.842);
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.212);
     
         &__items{
 
+            // padding-left: 10px;
+
             img{    
-                width: 2.2vw;
+                width: 18px;
                 height:auto;
             }
             
         }
     }
-
-    
-
-    
 }
