@@ -4,18 +4,26 @@
     flex-direction: $direction;
 }
 
+
+html{
+
+    // font-size: 16px;
+}
+
+
 *{
     box-sizing: border-box;
     font-size: 16px;
     margin: 0;
     padding: 0;
     font-size: calc(70% + 0.6vmin);
-    font-family:'Courier New', Courier, monospace
+    font-family: 'Raleway', sans-serif;
 }
 
 body{
-    height: 150vh;
-    background: #ffffffd0;
+    // height: 150vh;
+    // background: #ffffffd0;
+    overflow-x: hidden;
 }
 
 .header{
@@ -29,13 +37,14 @@ body{
     align-items: center;
     border-bottom: 0.1px solid #dddcdc;
     box-shadow: 0.2px 0.2px 2px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 
     &__content{
         @include displayFlex(row);
     }
 
     &__item{
-        padding: 0 10px;
+        padding: 0 20px;
         
 
         &:hover{
@@ -49,18 +58,21 @@ body{
 
     &__menu{
         display: none;
-        top: 0.75rem;
-        right: 0.75rem;
+        top: 0.90rem;
+        right: 0.90rem;
         position: absolute;
-        height: 30px;
-        width: 30px;
-        background: rgb(42, 72, 155);
+        height: 20px;
+        width: 20px;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
 .main{
-    // height:500vh;
-    width: 70vw; //change here necessarily
+    width: 65vw; //change here necessarily
     margin: 0 auto;
     padding-top: 120px;
 
@@ -87,6 +99,10 @@ body{
         font-size: 1.3rem;
     }
 
+    &__description{
+        line-height: 35px;
+    }
+
     &__stacks{
         @include displayFlex(row);
         justify-content: space-evenly;
@@ -95,12 +111,12 @@ body{
 
     &__tech{
         padding: 20px 20px 0px 20px;
-        border-radius: 6px;
-        background: #f8f8f8;
+        // background: #f8f8f8;
         
         &:hover{
             cursor: pointer;
-            background: #e7e7e7;
+            border-radius: 2px;
+            background: rgb(245, 245, 245);
         }
 
     }
@@ -133,33 +149,130 @@ body{
             }
         }
 
-    
+
         
     }
 
+    // ACCORDION 
+
+    // ACCORDION
+
+    
 
     *{
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     
 }
 
+input[type="checkbox"] {
+    display: none;
+}
+
+  /* Style for the accordion labels */
+.accordion-label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &::before{
+        content: "+";
+        padding-right: 10px;
+    }
+}
+
+  /* Styling when the label is checked (accordion is open) */
+
+  /* Hide the content by default */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    display: none;
+}
+
+  /* Show the content when the label is checked */
+input[type="checkbox"]:checked + .accordion-label + .accordion-content {
+    max-height: 500px; /* Adjust the maximum height as needed */
+    display: block;
+    transition: max-height 0.3s;
+}
+
 .media{
-    height:100px;
     position: fixed;
     top: 30vh;
     left: 30px;
+    padding: 15px 10px 15px 10px;
 
     &__items{
-
-        margin-top: 40px;
         
         img{    
             width: 2.2vw;
             height:auto;
+            padding: 15px 0px 15px 0px;
+
+            &:hover{
+                cursor: pointer;
+            }
         }
         
     }
+}
+
+.hero{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa;
+    
+
+    &__scroller{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(212, 212, 212, 0.76);
+        bottom: 0px;
+        left: 300px;
+    }
+
+    &__greet{
+        position: absolute;
+        // width: 100px;
+        // height: 100px;
+        // background-color: rgba(126, 45, 45, 0.76);
+        right: 0px;
+        bottom: 300px;
+
+        h1{
+            font-size:1.4rem;
+        }
+    }
+}
+
+.footer{
+    padding: 20px;
+    width: 100%;
+    background: #000;
+    @include displayFlex(column);
+    align-items: center;
+    color: #ffffff;
+
+    &__wrapper{
+        padding-top: 30px;
+        @include displayFlex(row);
+
+        div{
+            padding: 0px 10px 0px 10px;
+        }
+
+        div:nth-child(2){
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+
+
+    }
+
 }
 
 
@@ -193,6 +306,33 @@ body{
             }
         }
     }
+
+    .main{
+        width:94vw;
+
+    }
+
+    .media{
+        position: fixed;
+        top: 30vh;
+        left: 10px;
+        padding: 10px 25px 10px 10px;
+        background-color: rgba(240, 240, 240, 0.842);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.212);
+    
+        &__items{
+
+            img{    
+                width: 2.2vw;
+                height:auto;
+            }
+            
+        }
+    }
+
+    
 
     
 }

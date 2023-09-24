@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style/dist/css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap" rel="stylesheet">
     <script src="./main.js" defer></script>
 </head>
 <body>
@@ -18,8 +21,20 @@
             <div class="header__item">Stacks</div>
             <div class="header__item header__item--active">Contact</div>
         </div>
-        <div class="header__content header__menu"></div>
+        <div class="header__content header__menu"><img src="./style/assets/menu.png" alt="menu"></div>
     </header>
+
+    <!-- HERO PAGE -->
+
+    <main class="hero">
+        <!-- <div class="hero__scroller"></div>
+        <div class="hero__greet">
+            <h1>Hej! I,m @aminbasiran <br/> Self-taught developer breaking into tech.</h1>
+        </div> -->
+    </main>
+
+<!-- HERO PAGE -->
+
     <main class="main">
         <div class="main__section">
             <p class="main__brief">Brief history</p>
@@ -30,15 +45,15 @@
             <p class="main__description">Starting my career off with Principal Asset Management Berhad (PAMB) as a Junior Business Process Engineer specializing in integrating Robotic Processes Automation (RPA) into business models in order to maximize workload without human intervention. We managed to deploy a successfully operated program with several stakeholders and the projection of several projects to follow suit that was in the process.
 
                 Left PAMB and joined DHL APSSC as a Junior Associate in Data Management dept. with 1+ years of experience specializes in SVC's outbound and inbound. During the time, my team and I managed to accelerate a staggering number of France Export Backlogs shipments at custom through a system
-                called DHL Central Engine (DCE).
+                called DHL Central Engine (DCE).<br/><br/>
                 
                 Finding passion in writing codes, I decided to break my way into the industry learning, improving and self-progressing each and every day. I focus on front-end developing at the moment. While coding is all fun, I started to dive into data analytics as well by immersing in SQL, Tableau and python. Having the knowledges in these area, I have created several small portfolio projects for each of the tools(you can find them on my 𝗚𝗶𝘁𝗵𝘂𝗯 account). I believe that finding solutions on the internet doesn't make me a bad programmer because it actually helped me a lot to understand and figure out my own work around to apply to my code.  These are the tools that I know and able to work around: 𝗛𝗧𝗠𝗟𝟱, 𝗖𝗦𝗦𝟯, 𝗝𝗮𝘃𝗮𝘀𝗰𝗿𝗶𝗽𝘁, 𝗧𝗮𝗶𝗹𝘄𝗶𝗻𝗱𝗖𝗦𝗦, 𝗣𝘆𝘁𝗵𝗼𝗻, 𝗦𝗾𝗹 𝗮𝗻𝗱 𝗚𝗶𝘁. Currently learning and exploring 𝗥𝗲𝗮𝗰𝘁.𝗷𝘀.
                 
-                On the other hand, as an avid learner in language learning, I have always find myself immersed in Spanish, German and Swedish language. I am able understand contexts in these languages however with limited capability in speaking them. Regardless, practice makes improvement! With these 3 foreign languages, I found learning language opens up windows of vast opportunities to connect ourselves with people globally. Looking forward to use my ability in foreign languages at its fullest capacity in the future.
+                <br/><br/>On the other hand, as an avid learner in language learning, I have always find myself immersed in Spanish, German and Swedish language. I am able understand contexts in these languages however with limited capability in speaking them. Regardless, practice makes improvement! With these 3 foreign languages, I found learning language opens up windows of vast opportunities to connect ourselves with people globally. Looking forward to use my ability in foreign languages at its fullest capacity in the future.
                 
                 Currently I am actively seeking a 𝗳𝗿𝗼𝗻𝘁-𝗲𝗻𝗱 𝗱𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿/data analyst/database engineer position and looking forward to gain more experiences and knowledges to equip myself to work with some of the best tech companies globally.
                 
-                Feel free to [contact me via LinkedIn or email](https://www.notion.so/Contact-me-2396d2d8669c435bb7b439c53c3a4154?pvs=21). I'm always looking forward for an insightful conversations or working opportunities!</p>
+                Feel free to contact me via LinkedIn or email. I'm always looking forward for an insightful conversations or working opportunities!</p>
             <!-- <button class="main__button">Contact</button> -->
             
         </div>   
@@ -90,7 +105,12 @@
                 </div>
                 <div class="main__projects__item">
                     <img src="./style/assets/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg" alt="">
-                    <h1>#5. RESTful API using nodejs + expressjs</h1>
+                    <h1>#5. Creating RESTful API using nodejs + expressjs</h1>
+                    <p>Etiam sodales elit vel viverra fermentum. Ut at auctor arcu, vel dapibus dui. Vestibulum interdum iaculis dapibus.</p>
+                </div>
+                <div class="main__projects__item">
+                    <img src="./style/assets/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg" alt="">
+                    <h1>#5. Creating RESTful API using nodejs + expressjs</h1>
                     <p>Etiam sodales elit vel viverra fermentum. Ut at auctor arcu, vel dapibus dui. Vestibulum interdum iaculis dapibus.</p>
                 </div>
             </div>
@@ -99,14 +119,48 @@
         </div>   
 
         <h2 class="main__FAQ">Frequently asked questions</h2>
-        <h3 class="main__questions">> What services do you offer?</h3>
-        <h3 class="main__questions">> Can you provide references or testimonials from past clients?</h3>
-        <h3 class="main__questions">> How can I contact you?</h3>
+        
+        <div class="main__accordion">
+            <input type="checkbox" id="section1">
+            <label for="section1" class="main__label">What services do you offer?</label>
+            <div class="main__content">
+                <p>Etiam sodales elit vel viverra fermentum. Ut at auctor arcu, vel dapibus dui. Vestibulum interdum iaculis dapibus.</p>
+            </p>
+            </div>
+        
+            <input type="checkbox" id="section2">
+            <label for="section2" class="main__label">Can you provide references or testimonials from past projects?</label>
+            <div class="main__content">
+                <p>You can head to projects section in order to view all my previous projects.</p>
+            </p>
+            </div>
+            <input type="checkbox" id="section3">
+            <label for="section3" class="main__label">How can I contact you?</label>
+            <div class="main__content">
+                <p>I can be contacted via email, linkedin or github. </p>
+            </p>
+            </div>
+        </div>
+        
     </main>
+
+    
     <aside class="media">
-        <div class="media__items"><img src="./style/assets/github.png" alt="github"></div>
-        <div class="media__items"><img src="./style/assets/twitter.png" alt="twitter"></div>
-        <div class="media__items"><img src="./style/assets/linkedin.png" alt="linkedin"></div>
+        <div class="media__items"><a href="https://github.com/aminbasiran"><img src="./style/assets/github.png" alt="github"></a></div>
+        <div class="media__items"><a href=""><img src="./style/assets/twitter.png" alt="twitter"></a></div>
+        <div class="media__items"><a href="https://www.linkedin.com/in/muhammadamin6151/"><img src="./style/assets/linkedin.png" alt="linkedin"></a></div>
     </aside>
+
+    <footer class="footer">
+            <h1>Quick links</h1>
+            <div class="footer__wrapper">
+                <div>about<img src="" alt=""></div>
+                <div>projects<img src="" alt=""></div>
+                <div>contact<img src="" alt=""></div>
+            </div>
+        
+        
+
+    </footer>
 </body>
 </html>
