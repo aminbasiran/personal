@@ -83,46 +83,35 @@ body{
         margin-left: 5px;
     }
 
-    &__avatar{
-        width: 5vw;
-        height:5vw;
-        border-radius: 50%;
-        background: #000;
-    }
-
     &__profile{
-        border-radius: 10px;
-        background: #f7f7f7;
-        padding: 10px;
-        width: 40vmin;
-        @include displayFlex(column);
-        justify-content: center;
-        align-items: center;
-        box-shadow: 1px 1px 5px 1px #dfdfdf;
         position: fixed;
+        padding: 20px;
+        width: 270px;
+        height: 500px;
+        background-image: url('../../assets/brian-lawson-_XKzo-Du-3w-unsplash.jpg');
+        background-size: cover; /* Adjust the background size as needed */
+        background-position:right;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 0px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px 1px #777474;
+
+        h1{
+            color: #ffffff;
+        }
     }
 
-    &__name{
-        font-weight: bolder;
-        font-size: 1.5rem;
-    }
-
-    &__information{
-        @include displayFlex(column);
-        width: 100%;
-        justify-content: center;
-        align-items: flex-start;
-
-        > p{
-            padding-bottom: 0px;
-        }
-
-        *:nth-child(1), *:nth-child(4){
-            font-weight:bolder;
-            font-size: 0.7rem;
-        }
-
-
+    &__glass{
+        width: 80%;
+        height: 200px;
+        backdrop-filter: blur(11px) saturate(161%);
+        -webkit-backdrop-filter: blur(11px) saturate(161%);
+        background-color: rgba(108, 112, 126, 0.35);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
     }
 
     *{
