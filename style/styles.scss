@@ -18,6 +18,7 @@ html{
 
 body{
     overflow-x: hidden;
+    background: #f1f1f1;
 }
 
 .header{
@@ -67,21 +68,78 @@ body{
 }
 
 .main{
-    width: 60vw; //change here necessarily
+    width: 70vw; //change here necessarily
     margin: 0 auto;
-    padding-top: 90px;
+    padding-top: 70px;
+    display: flex;
+
+    &__left{
+        width: 75%;
+        margin-right: 5px;
+    }
+
+    &__right{
+        width: 25%;
+        margin-left: 5px;
+    }
+
+    &__avatar{
+        width: 5vw;
+        height:5vw;
+        border-radius: 50%;
+        background: #000;
+    }
+
+    &__profile{
+        border-radius: 10px;
+        background: #f7f7f7;
+        padding: 10px;
+        width: 40vmin;
+        @include displayFlex(column);
+        justify-content: center;
+        align-items: center;
+        box-shadow: 1px 1px 5px 1px #dfdfdf;
+        position: fixed;
+    }
+
+    &__name{
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    &__information{
+        @include displayFlex(column);
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+
+        > p{
+            padding-bottom: 0px;
+        }
+
+        *:nth-child(1), *:nth-child(4){
+            font-weight:bolder;
+            font-size: 0.7rem;
+        }
+
+
+    }
 
     *{
         padding-bottom: 20px;
     }
 
     &__section{
-        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        background: #f7f7f7;
         margin-bottom: 20px;
-        border-bottom: 1px solid #cccbcb;
+        box-shadow: 1px 1px 5px 1px #dfdfdf;
     }
 
     &__brief{
+        font-weight: bolder;
+        color: #000000;
         padding-bottom: 40px;
     }
 
@@ -183,7 +241,7 @@ body{
 
     &__content{
         max-height: 0;
-        overflow: hidden;
+        // overflow: hidden;
         transition: max-height 0.3s;
         display: none;
     }
@@ -197,7 +255,7 @@ body{
             display: block;
             transition: max-height 0.3s;
         }
-    }   
+    }  
     // ACCORDION
 }
 
@@ -208,7 +266,6 @@ body{
     padding: 15px 10px 15px 10px;
 
     &__items{
-        
         img{    
             width: 30px;
             height:auto;
@@ -217,8 +274,7 @@ body{
             &:hover{
                 cursor: pointer;
             }
-        }
-        
+        } 
     }
 }
 
@@ -249,10 +305,26 @@ body{
             border-left: 1px solid white;
             border-right: 1px solid white;
         }
-
-
     }
 
+}
+
+
+@media only screen and (max-width:1040px){
+    .main{
+        width:70vw;
+
+        &__left{
+            width: 100%;
+            margin-right: 5px;
+        }
+    
+        &__right{
+            display: none;
+            width: 0%;
+            margin-left: 5px;
+        }
+    }
 }
 
 
@@ -297,7 +369,18 @@ body{
     }
 
     .main{
-        width:93vw;
+        width:95vw;
+
+        &__left{
+            width: 100%;
+            margin-right: 5px;
+        }
+    
+        &__right{
+            display: none;
+            width: 0%;
+            margin-left: 5px;
+        }
 
 
         &__title{
@@ -361,5 +444,9 @@ body{
             }
             
         }
+    }
+
+    .profile{
+        display: none;
     }
 }
